@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-touch-fullscreen" content="yes" />
+
+        <style type="text/css">
+            body, html {
+                margin: 0;
+                box-sizing: border-box;
+                font-family: "Roboto Condensed",sans-serif;
+                font-size: 16px;
+                -webkit-font-smoothing: antialiased;
+                color: #333;
+            }
+
+
+            input, textarea {outline:none;}
+            input:active, textarea:active {outline:none;}
+            :focus {outline:none;}
+            textarea {resize:none;}
+            textarea {resize:vertical;}
+            textarea {resize:horizontal;}
+
+            a {
+                text-decoration: none;
+                color: black;
+            }
+
+            * {
+                box-sizing: border-box;
+            }
+            .wrapper {
+                min-height: 500px;
+                width: 100%;
+                background-color: #fff;
+            }
+
+            .header {
+                display: flex;
+                flex-direction: row;
+                background-color: #fafafa;
+                height: 128px;
+                width: 100%;
+                padding: 18px 40px 18px 40px;
+                align-items: baseline;
+                justify-content: space-between;
+                letter-spacing: 0.02em;
+            }
+
+            .header__contacts {
+                display: flex;
+                flex-direction: column;
+                text-align: right;
+                align-self: center;
+                font-weight: bold;
+                color: #333;
+            }
+
+            .header__contacts a {
+                color: #3ba358;
+                line-height: 1.5;
+            }
+
+            .header__contacts a:hover{
+                text-decoration: underline;
+            }
+
+            .header nav {
+                text-align: center;
+                align-self: center;
+            }
+
+            .qr-block__title {
+                font-size: 60px;
+                font-weight: 500;
+                text-align: center;
+                margin: 80px 0 40px 0;
+            }
+
+            .ticket-form__text {
+                font-size: 35px;
+                font-weight: 500;
+                text-align: center;
+            }
+
+            .ticket-form{
+                text-align: center;
+            }
+
+            .ticket-form__input {
+                height: 44px;
+                border: 2px solid #38a459;
+                outline: none!important;
+                padding: 6px 12px;
+                border-radius: 0;
+                background-color: #fff;
+                margin-top: 20px;
+                text-align: center;
+                width: 350px;
+            }
+
+            .ticket-form__input:focus {
+                box-shadow: 0 0 10px rgba(40, 167, 69, 0.5);
+            }
+
+            .ticket-form__button {
+                margin-top: 20px;
+                height: 44px;
+                width: 350px;
+                background-color: #3ba358;
+                color: #fff;
+                border: none;
+                font-size: 16px;
+            }
+
+            .ticket-form__button:hover {
+                box-shadow: 0 0 50px rgba(50, 50, 50, 0.2);
+            }
+
+            .ticket-form__button:focus {
+                border: none;
+            }
+
+            #qrcanv {
+                background-color: #484;
+                margin-top: 20px;
+                width: 350px;
+                height: 350px;
+            }
+
+            .copyright {
+                text-align: center;
+                margin-top: 35px;
+                color: #3ba358;
+            }
+
+        </style>
+
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap" rel="stylesheet">
+
+        <script type="text/javascript">
+        </script>
+
+
+    </head>
+
+    <body>
+        <div class="wrapper">
+            <div class="header">
+                <img src="img/logo.svg">
+                <nav>
+                    <a href="/">Главная</a>
+                </nav>
+                <div class="header__contacts">
+                    <span>г. Красноярск</span>
+                    <a href="tel: +7 (391) 212-99-64">+7 (391) 212-99-64</a>
+                </div>
+            </div>
+            <div class="qr-block">
+                <!-- div class="qr-block__title">
+                    Генератор QR кода
+                </div> -->
+                <div class="qr-block__ticket-form ticket-form">
+                    <div class="ticket-form__text">
+                        Введите номер вашего билета
+                    </div>
+                    <form>
+                        <input type="text" placeholder="123AA45678" name="" class="ticket-form__input">
+                        </br>
+                        <canvas id="qrcanv"}>No Canvas Support?</canvas>
+                        </br>
+                        <input type="button" name="" value="Генерировать QR-код" class="ticket-form__button" onclick="doqr()">
+                    </form>
+                </div>
+            </div>
+            <div class="footer">
+                <div class="copyright">Javascript QR Encoder, Copyright 2010, tz@execpc.com, released under GPLv3</div>
+            </div>
+        </div>
+
+        <script type="text/javascript" src="js/qrscript.js"></script>
+    </body>
+</html>
