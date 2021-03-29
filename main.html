@@ -147,13 +147,13 @@
 
     </head>
 
-    <body>
+    <body onload="setupqr()">
         <div class="wrapper">
             <div class="header">
-                <img src="img/logo.svg">
-                <nav>
+                <a href="https://ptarena.ru"><img src="img/logo.svg"></a>
+<!--                 <nav>
                     <a href="/">Главная</a>
-                </nav>
+                </nav> -->
                 <div class="header__contacts">
                     <span>г. Красноярск</span>
                     <a href="tel: +7 (391) 212-99-64">+7 (391) 212-99-64</a>
@@ -167,8 +167,8 @@
                     <div class="ticket-form__text">
                         Введите номер вашего билета
                     </div>
-                    <form>
-                        <input type="text" placeholder="123AA45678" name="" class="ticket-form__input">
+                    <form name = 'qrform'>
+                        <input type="text" placeholder="123AA45678" name="qrinp" class="ticket-form__input">
                         </br>
                         <canvas id="qrcanv"}>No Canvas Support?</canvas>
                         </br>

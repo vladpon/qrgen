@@ -112,7 +112,7 @@ gexp = [
 var strinbuf=[], eccbuf=[], qrframe=[], framask=[], rlens=[]; 
 // Control values - width is based on version, last 4 are from table.
 var version, width, neccblk1, neccblk2, datablkw, eccblkwid;
-var ecclevel = 1;
+var ecclevel = 4;
 // set bit to indicate cell in qrframe is immutable.  symmetric around diagonal
 function setmask(x, y)
 {
@@ -705,30 +705,33 @@ function genframe(instring)
 var wd, ht, qrc;
 function setupqr(){
 //    window.scrollTo(0,1)
-    wd = window.innerWidth-10;
-    ht = window.innerHeight-10;
-    mp = document.getElementById("mapcanv");
+    // wd = window.innerWidth-10;
+    // ht = window.innerHeight-10;
 
-    qrd = document.getElementById("qrdiv");
-    qrd.style.width = wd + "px";
-    qrd.style.height = ht + "px";
+    // mp = document.getElementById("mapcanv");
 
-    wd -= 4;
-    ht -= 80;
+    // qrd = document.getElementById("qrdiv");
+    // qrd.style.width = wd + "px";
+    // qrd.style.height = ht + "px";
+
+    // wd -= 4;
+    // ht -= 80;
 
     var elem = document.getElementById('qrcanv');
     qrc = elem.getContext('2d');
+    wd = elem.offsetWidth;
+    ht = elem.offsetHeight;
     qrc.canvas.width = wd;
     qrc.canvas.height = ht;
-    qrc.fillStyle = '#eee';
+    qrc.fillStyle = '#3ba358';
     qrc.fillRect(0,0,wd,ht);
 
 }
 
 function doqr() {
     d = document;
-    ecclevel = d.qrinp.ECC.value;
-    qf = genframe(d.qrinp.qrinput.value);
+    // ecclevel = d.qrinp.ECC.value;
+    qf = genframe(d.qrform.qrinp.value);
     qrc.lineWidth=1;
 
     var i,j;
@@ -739,8 +742,9 @@ function doqr() {
     px=Math.round(px - 0.5);
     qrc.clearRect(0,0,wd,ht);
     qrc.fillStyle = '#fff';
-    qrc.fillRect(0,0,px*(width+8),px*(width+8));
-    qrc.fillStyle = '#000';
+    // qrc.fillRect(0,0,px*(width+8),px*(width+8));
+    qrc.fillRect(0,0,wd,ht);
+    qrc.fillStyle = '#3ba358';
     for( i = 0; i < width; i++ )
         for( j = 0; j < width; j++ )
             if( qf[j*width+i] )
