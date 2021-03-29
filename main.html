@@ -136,6 +136,22 @@
                 color: #3ba358;
             }
 
+            .header__contacts_mobile {
+                display: none;
+                align-self: center;
+            }
+
+            @media (max-width: 767px) {
+
+                .header__contacts {
+                    display: none;
+                }
+
+                .header__contacts_mobile {
+                    display: block;
+                }
+            }
+
         </style>
 
         <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -157,6 +173,9 @@
                 <div class="header__contacts">
                     <span>г. Красноярск</span>
                     <a href="tel: +7 (391) 212-99-64">+7 (391) 212-99-64</a>
+                </div>
+                <div class="header__contacts_mobile">
+                    <a href="tel: +7 (391) 212-99-64"><img src="img/phone.svg"></a>
                 </div>
             </div>
             <div class="qr-block">
