@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+        <meta name="viewport" content="initial-scale=1.0" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-touch-fullscreen" content="yes" />
 
@@ -80,6 +80,7 @@
             }
 
             .ticket-form__text {
+                margin-top: 20px;
                 font-size: 35px;
                 font-weight: 500;
                 text-align: center;
@@ -150,7 +151,69 @@
                 .header__contacts_mobile {
                     display: block;
                 }
+
+
+                #qrcanv {
+                    width: 250px;
+                    height: 250px;
+                }
+
+                .header {
+                    height: 100px;
+                }
+
+                .header__logo {
+                    height: 60px;
+                }
+
+                .ticket-form__input {
+                    width: 250px;
+                }
+
+                .ticket-form__button {                   
+                    width: 250px;
+                }
+
+                .ticket-form__text {
+                    margin-top: 20px;
+                    font-size: 30px;
+                }
             }
+
+            @media (max-width: 576px) {
+
+                #qrcanv {
+                    width: 250px;
+                    height: 250px;
+                }
+
+                .header {
+                    height: 56px;
+                    padding: 5px 40px 5px 40px;
+                }
+
+                .header__logo {
+                    height: 40px;
+                }
+
+                .header__mobile-logo {
+                    height: 20px;
+                }
+
+                .ticket-form__input {
+                    width: 250px;
+                }
+
+                .ticket-form__button {                   
+                    width: 250px;
+                }
+
+                .ticket-form__text {
+                    margin-top: 20px;
+                    font-size: 28px;
+                }
+            }
+            
 
         </style>
 
@@ -166,7 +229,7 @@
     <body onload="setupqr()">
         <div class="wrapper">
             <div class="header">
-                <a href="https://ptarena.ru"><img src="img/logo.svg"></a>
+                <a href="https://ptarena.ru"><img  class="header__logo" src="img/logo.svg"></a>
 <!--                 <nav>
                     <a href="/">Главная</a>
                 </nav> -->
@@ -175,7 +238,7 @@
                     <a href="tel: +7 (391) 212-99-64">+7 (391) 212-99-64</a>
                 </div>
                 <div class="header__contacts_mobile">
-                    <a href="tel: +7 (391) 212-99-64"><img src="img/phone.svg"></a>
+                    <a href="tel: +7 (391) 212-99-64"><img src="img/phone.svg" class="header__mobile-logo"></a>
                 </div>
             </div>
             <div class="qr-block">
