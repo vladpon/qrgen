@@ -723,7 +723,7 @@ function setupqr(){
     ht = elem.offsetHeight;
     qrc.canvas.width = wd;
     qrc.canvas.height = ht;
-    qrc.fillStyle = '#3ba358';
+    qrc.fillStyle = '#bbffbb';
     qrc.fillRect(0,0,wd,ht);
 
 }

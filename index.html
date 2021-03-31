@@ -137,10 +137,25 @@
             }
 
             #qrcanv {
-                background-color: #484;
+                position: absolute;
+                z-index: 10;                
+                left: calc(50% - 175px);
+                margin: 0px auto;
+                background-color: #fff;
                 margin-top: 20px;
                 width: 350px;
                 height: 350px;
+                box-shadow: 10px 10px 10px rgba(150, 150, 150, 0.8);
+                border-radius: 4px;
+            }
+
+            .canvas {
+                top: -350px;                
+                transition: all 0.4s;
+            }
+
+            .canvas.active {
+                top: 10px;
             }
 
             .copyright {
@@ -170,6 +185,7 @@
                 #qrcanv {
                     width: 250px;
                     height: 250px;
+                    left: calc(50% - 125px);
                 }
 
                 .header {
@@ -200,6 +216,7 @@
                 #qrcanv {
                     width: 250px;
                     height: 250px;
+                    left: calc(50% - 125px);
                 }
 
                 .header {
@@ -271,6 +288,7 @@
                 </div>
             </div>
             <div class="qr-block">
+                <canvas class="canvas" id="qrcanv"}>No Canvas Support?</canvas>
                 <!-- div class="qr-block__title">
                     Генератор QR кода
                 </div> -->
@@ -279,10 +297,8 @@
                         Введите номер вашего билета
                     </div>
                     <form name = 'qrform' onsubmit = "doqr(); return false;">
-                        <input type="text" placeholder="123AA45678" name="qrinp" class="ticket-form__input">
-                        </br>
-                        <canvas id="qrcanv"}>No Canvas Support?</canvas>
-                        </br>
+                        <input type="text" placeholder="123AA45678" name="qrinp" class="ticket-form__input">        
+                        <br>                
                         <input type="button" name="" value="Генерировать QR-код" class="ticket-form__button" onclick="doqr()">
                     </form>
                 </div>
@@ -293,12 +309,17 @@
         </div>
         <script type="text/javascript">
             let btn = document.querySelector('.ticket-form__button');
+            let canv = document.querySelector('#qrcanv');
             btn.addEventListener('touchstart', () => {
                 btn.classList.add('active');
             })
             btn.addEventListener('touchend', () => {
                 btn.classList.remove('active');
             })
+
+            canv.addEventListener('click', () => canv.classList.toggle('active'));
+            btn.addEventListener('click', () => canv.classList.add('active'));
+
         </script>
         <script type="text/javascript" src="js/qrscript.js"></script>
     </body>
