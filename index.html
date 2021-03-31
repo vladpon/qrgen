@@ -100,6 +100,8 @@
             .ticket-form{
                 text-align: center;
                 transition: filter 0.5s;
+                max-width: 820px;
+                margin: 0 auto;
             }
 
             .ticket-form.active {
@@ -180,12 +182,14 @@
             }
 
             .canvas {
-                top: -350px;                
+                z-index: 0;
+                top: -390px;                
                 transition: all 0.4s;
             }
 
             .canvas.active {
                 top: 10px;
+                z-index: 10;
             }
 
             .copyright {
@@ -374,11 +378,11 @@
                 ticketForm.classList.toggle('active');
                 bdy.classList.toggle('lock');
             });
-            canv.addEventListener('swipe', () => {
-                canv.classList.toggle('active');
-                ticketForm.classList.toggle('active');
-                bdy.classList.toggle('lock');
-            });
+            // canv.addEventListener('swipe', () => {
+            //     canv.classList.toggle('active');
+            //     ticketForm.classList.toggle('active');
+            //     bdy.classList.toggle('lock');
+            // });
             btn.addEventListener('click', () => {
                 window.scrollTo(0, 30);
                 canv.classList.add('active');
