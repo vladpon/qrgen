@@ -744,7 +744,8 @@ function doqr() {
     qrc.fillStyle = '#fff';
     // qrc.fillRect(0,0,px*(width+8),px*(width+8));
     qrc.fillRect(0,0,wd,ht);
-    qrc.fillStyle = '#3ba358';
+    // qrc.fillStyle = '#3ba358';
+     qrc.fillStyle = '#000';
     for( i = 0; i < width; i++ )
         for( j = 0; j < width; j++ )
             if( qf[j*width+i] )
