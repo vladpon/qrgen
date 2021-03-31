@@ -330,7 +330,7 @@
                         <img src="img/arrow.svg" class="ticket-form__arrow">
                     </div>
                     <form name = 'qrform' onsubmit = "doqr(); return false;">
-                        <input type="number" placeholder="123AA45678" name="qrinp" class="ticket-form__input">        
+                        <input type="text" pattern="\d*" placeholder="123AA45678" name="qrinp" class="ticket-form__input">        
                         <br>                
                         <input type="button" name="" value="Генерировать QR-код" class="ticket-form__button" onclick="doqr()">
                     </form>
