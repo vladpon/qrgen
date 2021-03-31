@@ -15,6 +15,10 @@
                 color: #333;
             }
 
+            body.lock {
+                overflow: hidden;
+            }
+
 
             input, textarea {outline:none;}
             input:active, textarea:active {outline:none;}
@@ -368,14 +372,18 @@
             canv.addEventListener('click', () => {
                 canv.classList.toggle('active');
                 ticketForm.classList.toggle('active');
+                bdy.classList.toggle('lock');
             });
             canv.addEventListener('swipe', () => {
                 canv.classList.toggle('active');
                 ticketForm.classList.toggle('active');
+                bdy.classList.toggle('lock');
             });
             btn.addEventListener('click', () => {
+                window.scrollTo(0, 0);
                 canv.classList.add('active');
                 ticketForm.classList.add('active');
+                bdy.classList.add('lock');
             });
 
         </script>
