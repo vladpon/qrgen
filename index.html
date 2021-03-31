@@ -120,7 +120,7 @@
                 transform: rotate(180deg);
                 height: 80px;
                 position: relative;
-                left: 100px;
+                left: 31%;
             }
 
             .ticket-form__input {
@@ -132,7 +132,7 @@
                 background-color: #fff;
                 margin-top: 20px;
                 text-align: center;
-                width: 350px;
+                width: 450px;
             }
 
             .ticket-form__input:focus {
@@ -142,7 +142,7 @@
             .ticket-form__button {
                 margin-top: 20px;
                 height: 44px;
-                width: 350px;
+                width: 450px;
                 background-color: #3ba358;
                 color: #fff;
                 border: none;
@@ -224,11 +224,11 @@
                 }
 
                 .ticket-form__input {
-                    width: 250px;
+                    width: 400px;
                 }
 
                 .ticket-form__button {                   
-                    width: 250px;
+                    width: 400px;
                 }
 
                 .ticket-form__text {
@@ -259,11 +259,11 @@
                 }
 
                 .ticket-form__input {
-                    width: 250px;
+                    width: 320px;
                 }
 
                 .ticket-form__button {                   
-                    width: 250px;
+                    width: 320px;
                 }
 
                 .ticket-form__text {
@@ -283,6 +283,14 @@
                 .ticket-form__text {
                     margin-top: 15px;
                     font-size: 22px;
+                }
+
+                .ticket-form__input {
+                    width: 280px;
+                }
+
+                .ticket-form__button {                   
+                    width: 280px;
                 }
             }
             
@@ -358,6 +366,10 @@
             //         canv.classList.remove('active');
             // });
             canv.addEventListener('click', () => {
+                canv.classList.toggle('active');
+                ticketForm.classList.toggle('active');
+            });
+            canv.addEventListener('swipe', () => {
                 canv.classList.toggle('active');
                 ticketForm.classList.toggle('active');
             });
