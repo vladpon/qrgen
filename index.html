@@ -97,6 +97,27 @@
                 text-align: center;
             }
 
+            .ticket-form__manual {
+                min-height: 250px;
+                width: 80%;
+                margin: 0 auto;
+                margin-top: 20px;
+                background-color: #fff;
+                /*border: 1px solid #777;*/
+            }
+
+            .ticket-form__ticket {
+                margin-top: 15px;
+                width: 100%;
+            }
+
+            .ticket-form__arrow {
+                transform: rotate(180deg);
+                height: 80px;
+                position: relative;
+                left: 100px;
+            }
+
             .ticket-form__input {
                 height: 44px;
                 border: 2px solid #38a459;
@@ -296,6 +317,13 @@
                     <div class="ticket-form__text">
                         Введите номер вашего билета
                     </div>
+                    <div class="ticket-form__manual">
+                        Тут цыфирки на картинке. их надо бом бом в поле ниже
+                        <br>
+                        <img src="img/ticket.jpg" class="ticket-form__ticket">
+                        <br>
+                        <img src="img/arrow.svg" class="ticket-form__arrow">
+                    </div>
                     <form name = 'qrform' onsubmit = "doqr(); return false;">
                         <input type="text" placeholder="123AA45678" name="qrinp" class="ticket-form__input">        
                         <br>                
@@ -310,6 +338,7 @@
         <script type="text/javascript">
             let btn = document.querySelector('.ticket-form__button');
             let canv = document.querySelector('#qrcanv');
+            let bdy = document.body;
             btn.addEventListener('touchstart', () => {
                 btn.classList.add('active');
             })
@@ -317,6 +346,7 @@
                 btn.classList.remove('active');
             })
 
+            bdy.addEventListener('click', () => canv.classList.remove('active'));
             canv.addEventListener('click', () => canv.classList.toggle('active'));
             btn.addEventListener('click', () => canv.classList.add('active'));
 
