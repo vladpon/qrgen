@@ -336,17 +336,17 @@
                 </div> -->
                 <div class="qr-block__ticket-form ticket-form">
                     <div class="ticket-form__text">
-                        Введите номер вашего билета
+                        Введите номер штрихкода
                     </div>
                     <div class="ticket-form__manual">
-                        Тут цыфирки на картинке. их надо бом бом в поле ниже
+                        Рядом со штрих-кодом на Вашем билете расположены цифры. Введите их в поле ниже.
                         <br>
                         <img src="img/ticket.jpg" class="ticket-form__ticket">
                         <br>
                         <img src="img/arrow.svg" class="ticket-form__arrow">
                     </div>
                     <form name = 'qrform' onsubmit = "doqr(); return false;">
-                        <input type="text" pattern="\d*" placeholder="123AA45678" name="qrinp" class="ticket-form__input">        
+                        <input type="text" pattern="\d*" placeholder="123456789012" name="qrinp" class="ticket-form__input">        
                         <br>                
                         <input type="button" name="" value="Генерировать QR-код" class="ticket-form__button" onclick="doqr()">
                     </form>
